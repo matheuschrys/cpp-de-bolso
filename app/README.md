@@ -1,52 +1,39 @@
-# App
+# App C++ de Bolso
 
-Esta pasta está reservada para o web app/PWA **C++ de Bolso**.
+Esta pasta contém o web app **C++ de Bolso**.
 
-Stack planejada:
+Stack:
 
 - Vite
 - React
 - TypeScript
 - tema claro/escuro
 - progresso com `localStorage`
-- PWA para instalação no celular
+- Playwright para smoke test visual
 
 ## Conteúdo atual
 
-O app já contém 24 lições iniciais:
+O app cobre:
 
-1. Primeiro programa com `cout`.
-2. Entrada com `cin`.
-3. Variáveis e tipos fundamentais.
-4. Aritmética e precedência.
-5. `if` e operadores relacionais.
-6. Operadores lógicos.
-7. Repetição com `while`.
-8. Repetição com `for`.
-9. `break` e `continue`.
-10. Funções.
-11. Passagem por valor.
-12. Referências e parâmetros por referência.
-13. Escopo de variáveis.
-14. Pilha de chamadas de função.
-15. Arrays.
-16. Passagem de arrays para funções.
-17. Ponteiros básicos.
-18. Ponteiros em funções.
-19. `const` com ponteiros.
-20. Relação entre ponteiros e arrays.
-21. `std::string` básico.
-22. `std::string` completo.
-23. `std::vector` básico.
-24. `std::vector` e STL.
+- Arquivos em C++;
+- Strings e streams;
+- Classes, objetos, construtores e destrutores;
+- Sobrecarga de operadores e OO avançada;
+- Listas, pilhas e filas;
+- Big O e tabela de complexidades;
+- Ordenação e busca;
+- Ponteiros e alocação dinâmica.
 
 ## Recursos da trilha
 
-- busca por título, objetivo, tags e referência;
-- filtro por módulo;
-- filtro de favoritas;
-- agrupamento visual por módulo;
-- contagem de lições concluídas por módulo.
+- conteúdos por assunto;
+- banco de questões com filtros;
+- simulado geral;
+- revisão rápida;
+- flashcards com repetição espaçada;
+- revisão de erros;
+- desafios práticos;
+- visualizações de Big O e estruturas.
 
 ## Pastas
 
@@ -63,7 +50,15 @@ src/types/          Tipos TypeScript.
 src/utils/          Funções auxiliares.
 ```
 
-As dependências já foram instaladas com `npm install`.
+## Manutenção de conteúdo
+
+Use o guia central:
+
+```txt
+../docs/MAINTENANCE_GUIDE.md
+```
+
+Ele explica como adicionar questão, flashcard, conteúdo/capítulo, desafio prático e como interpretar os scripts de validação.
 
 ## Validação automatizada da interface
 

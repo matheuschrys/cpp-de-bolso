@@ -1,17 +1,17 @@
 # C++ de Bolso
 
-Projeto de um web app/PWA mobile-first para estudar fundamentos de C++ pelo celular.
+Web app de estudos para prova de C++ e Estruturas de Dados Básicas.
 
-O objetivo é transformar a trilha de estudos em lições curtas, com exemplos, quizzes, desafios de saída, revisão rápida e progresso salvo localmente.
+O projeto reúne teoria direta, exemplos em C++, banco de questões, simulado, flashcards, desafios práticos, revisão de erros, Big O interativo e tabela de complexidades.
 
-## Status
+## Stack
 
-Fase inicial de organização:
-
-- `AGENTS.md` criado como guia do projeto;
-- estrutura base reservada em `app/`;
-- documentação inicial em `docs/`;
-- materiais existentes preservados em `Slides/`, `Labs/` e na raiz.
+- Vite;
+- React;
+- TypeScript;
+- CSS global;
+- Playwright para smoke test visual;
+- progresso local com `localStorage`.
 
 ## Estrutura
 
@@ -22,18 +22,35 @@ Slides/ Materiais de aula existentes.
 Labs/   Exercícios e laboratórios existentes.
 ```
 
-## Direção do MVP
+## Como rodar
 
-Primeira versão funcional:
+```bash
+cd app
+npm install
+npm run dev
+```
 
-- Home;
-- trilha de lições;
-- busca e filtros na trilha;
-- página de lição;
-- modo claro e escuro;
-- progresso local;
-- 24 lições iniciais;
-- quiz com feedback;
-- desafio "qual é a saída?".
+## Validação
 
-As dependências do app já foram instaladas em `app/` com `npm install`.
+```bash
+cd app
+npm run lint
+npm run build
+npm test
+```
+
+Para smoke test visual:
+
+```bash
+npm run preview -- --host 127.0.0.1
+UI_SMOKE_URL=http://127.0.0.1:4173/ npm run test:ui
+```
+
+Se o Vite escolher outra porta, ajuste `UI_SMOKE_URL`.
+
+## Manutenção de conteúdo
+
+Para adicionar conteúdos, questões, flashcards, desafios ou entender os scripts de validação, consulte:
+
+- [Guia de manutenção](docs/MAINTENANCE_GUIDE.md)
+- [Checklist de revisão](docs/STUDY_REVIEW_CHECKLIST.md)

@@ -96,7 +96,7 @@ export const App = () => {
       case "mistakes":
         return <QuestionBankPage key="mistakes" questionIds={progress.incorrectQuestionIds} onAnswered={recordAnswer} onRemoveMistake={removeMistake} />;
       case "simulation":
-        return <SimulationPage onAnswered={recordAnswer} onComplete={saveSimulation} />;
+        return <SimulationPage onAnswered={recordAnswer} onComplete={saveSimulation} history={progress.simulationHistory} />;
       case "review":
         return <QuickReviewPage onComplete={markReviewed} />;
       case "flashcards":

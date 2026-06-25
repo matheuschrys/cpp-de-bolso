@@ -23,6 +23,8 @@ export type StudyQuestion = {
   practical?: boolean;
 };
 
+export type QuestionKind = NonNullable<StudyQuestion["kind"]>;
+
 export type TopicBlock = {
   title: string;
   what: string;
@@ -49,6 +51,16 @@ export type SimulationReport = {
   correct: number;
   incorrectIds: string[];
   weakThemes: string[];
+  filters?: {
+    chapters: ChapterId[];
+    difficulty?: Difficulty;
+    kind?: QuestionKind;
+  };
+  breakdown?: {
+    byTheme: { label: string; total: number; correct: number }[];
+    byDifficulty: { label: Difficulty; total: number; correct: number }[];
+    byKind: { label: QuestionKind; total: number; correct: number }[];
+  };
 };
 
 export type Flashcard = {

@@ -148,6 +148,7 @@ export const useProgress = () => {
         total: report.total,
         correct: report.correct,
         weakThemes: report.weakThemes,
+        filters: report.filters,
       }, ...currentProgress.simulationHistory].slice(0, 8),
     }));
   }, [setProgress]);
