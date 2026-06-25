@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import type { UserProgress } from "../types/progress";
+import type { SimulationReport } from "../types/study";
 
 const STORAGE_KEY = "cpp-de-bolso:progress";
 type ProgressUpdater = UserProgress | ((currentProgress: UserProgress) => UserProgress);
@@ -10,6 +11,10 @@ const defaultProgress: UserProgress = {
   quizScores: {},
   quizAttempts: {},
   theme: "dark",
+  answeredQuestionIds: [],
+  incorrectQuestionIds: [],
+  simulationHistory: [],
+  completedChallenges: [],
 };
 
 const loadProgress = (): UserProgress => {
@@ -93,6 +98,13 @@ export const useProgress = () => {
     [setProgress],
   );
 
+  const setLastChapter = useCallback(
+    (chapterId?: string) => {
+      setProgress((currentProgress) => ({ ...currentProgress, lastChapterId: chapterId }));
+    },
+    [setProgress],
+  );
+
   const setTheme = useCallback(
     (theme: UserProgress["theme"]) => {
       setProgress((currentProgress) => ({ ...currentProgress, theme }));
@@ -107,6 +119,48 @@ export const useProgress = () => {
     }));
   }, [setProgress]);
 
+  const recordQuestionAnswer = useCallback((questionId: string, correct: boolean) => {
+    setProgress((currentProgress) => ({
+      ...currentProgress,
+      answeredQuestionIds: currentProgress.answeredQuestionIds.includes(questionId)
+        ? currentProgress.answeredQuestionIds
+        : [...currentProgress.answeredQuestionIds, questionId],
+      incorrectQuestionIds: correct
+        ? currentProgress.incorrectQuestionIds.filter((id) => id !== questionId)
+        : currentProgress.incorrectQuestionIds.includes(questionId)
+          ? currentProgress.incorrectQuestionIds
+          : [...currentProgress.incorrectQuestionIds, questionId],
+    }));
+  }, [setProgress]);
+
+  const clearQuestionMistake = useCallback((questionId: string) => {
+    setProgress((currentProgress) => ({
+      ...currentProgress,
+      incorrectQuestionIds: currentProgress.incorrectQuestionIds.filter((id) => id !== questionId),
+    }));
+  }, [setProgress]);
+
+  const saveSimulation = useCallback((report: SimulationReport) => {
+    setProgress((currentProgress) => ({
+      ...currentProgress,
+      simulationHistory: [{
+        date: new Date().toISOString(),
+        total: report.total,
+        correct: report.correct,
+        weakThemes: report.weakThemes,
+      }, ...currentProgress.simulationHistory].slice(0, 8),
+    }));
+  }, [setProgress]);
+
+  const toggleChallenge = useCallback((challengeId: string) => {
+    setProgress((currentProgress) => ({
+      ...currentProgress,
+      completedChallenges: currentProgress.completedChallenges.includes(challengeId)
+        ? currentProgress.completedChallenges.filter((id) => id !== challengeId)
+        : [...currentProgress.completedChallenges, challengeId],
+    }));
+  }, [setProgress]);
+
   const resetProgress = useCallback(() => {
     setProgress(defaultProgress);
   }, [setProgress]);
@@ -118,8 +172,13 @@ export const useProgress = () => {
       toggleFavorite,
       saveQuizScore,
       setLastLesson,
+      setLastChapter,
       setTheme,
       markReviewed,
+      recordQuestionAnswer,
+      clearQuestionMistake,
+      saveSimulation,
+      toggleChallenge,
       resetProgress,
     }),
     [
@@ -128,8 +187,13 @@ export const useProgress = () => {
       toggleFavorite,
       saveQuizScore,
       setLastLesson,
+      setLastChapter,
       setTheme,
       markReviewed,
+      recordQuestionAnswer,
+      clearQuestionMistake,
+      saveSimulation,
+      toggleChallenge,
       resetProgress,
     ],
   );
