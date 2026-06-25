@@ -22,7 +22,7 @@ const routes = [
   { hash: "#/simulation", text: "Prova sem padrão previsível.", name: "simulation" },
   { hash: "#/review", text: "O que lembrar na véspera.", name: "review" },
   { hash: "#/flashcards", text: "Flashcards para lembrar sem decorar.", name: "flashcards" },
-  { hash: "#/complexity", text: "Tabela de Complexidades", name: "complexity" },
+  { hash: "#/complexity", text: "Complexidade que dá para ver.", name: "complexity" },
   { hash: "#/algorithms", text: "Identifique o algoritmo.", name: "algorithms" },
   { hash: "#/visualizer", text: "Ponteiros em movimento.", name: "visualizer" },
 ];

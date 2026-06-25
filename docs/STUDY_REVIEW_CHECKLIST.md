@@ -40,25 +40,42 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - [x] Implementar repetição espaçada mais refinada.
   - [x] Criar modo “só cards com código”.
 
-- [ ] **7. Polimento visual**
+- [x] **7. Aprofundar Big O e ordenações**
+  - [x] Criar visualizador interativo de crescimento Big O.
+  - [x] Permitir alterar tamanho da entrada e ver custos estimados.
+  - [x] Criar aba de ordenações/sortings.
+  - [x] Mostrar como Big O influencia cada algoritmo de ordenação.
+  - [x] Comparar tipos de sort em cenários diferentes.
+
+- [ ] **8. Polimento visual**
   - [ ] Revisar tema claro.
   - [ ] Melhorar estados vazios.
   - [ ] Refinar animações.
   - [ ] Melhorar espaçamento em telas muito pequenas.
 
-- [ ] **8. Documentação para manutenção**
+- [ ] **9. Documentação para manutenção**
   - [ ] Explicar como adicionar nova questão.
   - [ ] Explicar como adicionar flashcard.
   - [ ] Explicar como adicionar conteúdo/capítulo.
   - [ ] Explicar scripts de validação.
 
-- [ ] **9. Futuro maior**
+- [ ] **10. Futuro maior**
   - [ ] Login opcional.
   - [ ] Sincronização entre dispositivos.
   - [ ] Exportar/importar progresso.
   - [x] Deploy/preview público.
 
 ## Registro da rodada atual
+
+- Status: concluída.
+- Foco: nova etapa 7, aprofundando Big O e ordenações.
+- O que foi feito:
+  - Criada uma área interativa para visualizar crescimento de funções Big O.
+  - Criada uma aba de ordenações com comparação de algoritmos e cenários.
+  - Mantida a tabela de complexidades como consulta rápida.
+  - Atualizado o smoke test para reconhecer o novo título da página Big O.
+
+## Registro anterior mais recente
 
 - Status: concluída.
 - Foco: etapa 6, melhorando flashcards.
@@ -69,7 +86,7 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - Criado modo “só cards com código”.
   - Mantida compatibilidade com progresso antigo de flashcards.
 
-## Registro anterior mais recente
+## Registro da etapa 5
 
 - Status: concluída.
 - Foco: etapa 5, melhorando o modo simulado.
