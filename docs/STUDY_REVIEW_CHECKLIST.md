@@ -34,11 +34,11 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - [x] Mostrar análise mais detalhada no resultado.
   - [x] Salvar histórico de forma mais visual.
 
-- [ ] **6. Melhorar flashcards**
-  - [ ] Mostrar data de próxima revisão.
-  - [ ] Criar níveis “fácil / médio / difícil”.
-  - [ ] Implementar repetição espaçada mais refinada.
-  - [ ] Criar modo “só cards com código”.
+- [x] **6. Melhorar flashcards**
+  - [x] Mostrar data de próxima revisão.
+  - [x] Criar níveis “fácil / médio / difícil”.
+  - [x] Implementar repetição espaçada mais refinada.
+  - [x] Criar modo “só cards com código”.
 
 - [ ] **7. Polimento visual**
   - [ ] Revisar tema claro.
@@ -61,6 +61,17 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
 ## Registro da rodada atual
 
 - Status: concluída.
+- Foco: etapa 6, melhorando flashcards.
+- O que foi feito:
+  - Mostrada a data de próxima revisão por card.
+  - Criada avaliação fácil/médio/difícil.
+  - Implementada repetição espaçada com intervalos progressivos.
+  - Criado modo “só cards com código”.
+  - Mantida compatibilidade com progresso antigo de flashcards.
+
+## Registro anterior mais recente
+
+- Status: concluída.
 - Foco: etapa 5, melhorando o modo simulado.
 - O que foi feito:
   - Adicionados filtros por dificuldade e tipo de questão.
@@ -69,7 +80,7 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - Mantida a compatibilidade com o progresso já salvo.
   - Marcado o deploy/preview público como concluído em “Futuro maior”.
 
-## Registro anterior mais recente
+## Registro da etapa 4
 
 - Status: concluída.
 - Foco: etapa 4, aprofundando a revisão de erros.
@@ -105,7 +116,6 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
 
 ## Etapas restantes após esta rodada
 
-1. Melhorar flashcards.
-2. Polimento visual.
-3. Documentação para manutenção.
-4. Futuro maior: login, sincronização e exportação/importação de progresso.
+1. Polimento visual.
+2. Documentação para manutenção.
+3. Futuro maior: login, sincronização e exportação/importação de progresso.
