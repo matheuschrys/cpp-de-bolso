@@ -20,4 +20,9 @@ export type SimulationHistoryEntry = {
   total: number;
   correct: number;
   weakThemes: string[];
+  filters?: {
+    chapters: string[];
+    difficulty?: string;
+    kind?: string;
+  };
 };

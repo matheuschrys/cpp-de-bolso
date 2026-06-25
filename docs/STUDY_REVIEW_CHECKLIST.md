@@ -28,11 +28,11 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - [x] Permitir remover manualmente uma questão da lista de erros.
   - [x] Criar “refazer só meus erros mais recentes”.
 
-- [ ] **5. Melhorar simulado**
-  - [ ] Permitir escolher dificuldade.
-  - [ ] Permitir escolher tipo da questão.
-  - [ ] Mostrar análise mais detalhada no resultado.
-  - [ ] Salvar histórico de forma mais visual.
+- [x] **5. Melhorar simulado**
+  - [x] Permitir escolher dificuldade.
+  - [x] Permitir escolher tipo da questão.
+  - [x] Mostrar análise mais detalhada no resultado.
+  - [x] Salvar histórico de forma mais visual.
 
 - [ ] **6. Melhorar flashcards**
   - [ ] Mostrar data de próxima revisão.
@@ -56,9 +56,20 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - [ ] Login opcional.
   - [ ] Sincronização entre dispositivos.
   - [ ] Exportar/importar progresso.
-  - [ ] Deploy/preview público.
+  - [x] Deploy/preview público.
 
 ## Registro da rodada atual
+
+- Status: concluída.
+- Foco: etapa 5, melhorando o modo simulado.
+- O que foi feito:
+  - Adicionados filtros por dificuldade e tipo de questão.
+  - Enriquecido o resultado final com análise por tema, dificuldade e tipo.
+  - Adicionado histórico visual de simulados recentes.
+  - Mantida a compatibilidade com o progresso já salvo.
+  - Marcado o deploy/preview público como concluído em “Futuro maior”.
+
+## Registro anterior mais recente
 
 - Status: concluída.
 - Foco: etapa 4, aprofundando a revisão de erros.
@@ -70,7 +81,7 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - Criado estado vazio mais claro quando não há erro com os filtros atuais.
   - Validada a remoção manual e o modo de recentes com Playwright.
 
-## Registro anterior mais recente
+## Registro da etapa 3
 
 - Status: concluída.
 - Foco: etapa 3, melhorando o fluxo de continuidade do estudo.
@@ -94,8 +105,7 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
 
 ## Etapas restantes após esta rodada
 
-1. Melhorar simulado.
-2. Melhorar flashcards.
-3. Polimento visual.
-4. Documentação para manutenção.
-5. Futuro maior: login, sincronização, exportação/importação e deploy público.
+1. Melhorar flashcards.
+2. Polimento visual.
+3. Documentação para manutenção.
+4. Futuro maior: login, sincronização e exportação/importação de progresso.
