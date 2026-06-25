@@ -47,17 +47,17 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - [x] Mostrar como Big O influencia cada algoritmo de ordenação.
   - [x] Comparar tipos de sort em cenários diferentes.
 
-- [ ] **8. Polimento visual**
-  - [ ] Revisar tema claro.
-  - [ ] Melhorar estados vazios.
-  - [ ] Refinar animações.
-  - [ ] Melhorar espaçamento em telas muito pequenas.
+- [x] **8. Polimento visual**
+  - [x] Revisar tema claro.
+  - [x] Melhorar estados vazios.
+  - [x] Refinar animações.
+  - [x] Melhorar espaçamento em telas muito pequenas.
 
-- [ ] **9. Documentação para manutenção**
-  - [ ] Explicar como adicionar nova questão.
-  - [ ] Explicar como adicionar flashcard.
-  - [ ] Explicar como adicionar conteúdo/capítulo.
-  - [ ] Explicar scripts de validação.
+- [x] **9. Documentação para manutenção**
+  - [x] Explicar como adicionar nova questão.
+  - [x] Explicar como adicionar flashcard.
+  - [x] Explicar como adicionar conteúdo/capítulo.
+  - [x] Explicar scripts de validação.
 
 - [ ] **10. Futuro maior**
   - [ ] Login opcional.
@@ -68,6 +68,27 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
 ## Registro da rodada atual
 
 - Status: concluída.
+- Foco: etapa 9, documentação para manutenção.
+- O que foi feito:
+  - Criado `docs/MAINTENANCE_GUIDE.md` com mapa dos arquivos de conteúdo.
+  - Documentado o fluxo para adicionar conteúdos, questões, flashcards e desafios.
+  - Documentados os scripts de validação e quando usar cada um.
+  - Atualizados `README.md` e `app/README.md` para refletirem o estado atual do projeto.
+
+## Registro da etapa 8
+
+- Status: concluída.
+- Foco: etapa 8, polimento visual.
+- O que foi feito:
+  - Suavizado o tema claro com superfícies mais limpas, bordas menos pesadas e sombra um pouco mais discreta.
+  - Melhorados os estados vazios com cartão mais evidente, fundo sutil e contorno tracejado interno.
+  - Refinadas animações leves de entrada e hover, respeitando `prefers-reduced-motion`.
+  - Ajustados espaçamentos, títulos, botões e blocos de código para telas muito pequenas.
+  - Validada a UI com screenshots de desktop, mobile e estado vazio.
+
+## Registro da etapa 7
+
+- Status: concluída.
 - Foco: nova etapa 7, aprofundando Big O e ordenações.
 - O que foi feito:
   - Criada uma área interativa para visualizar crescimento de funções Big O.
@@ -75,7 +96,7 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
   - Mantida a tabela de complexidades como consulta rápida.
   - Atualizado o smoke test para reconhecer o novo título da página Big O.
 
-## Registro anterior mais recente
+## Registro da etapa 6
 
 - Status: concluída.
 - Foco: etapa 6, melhorando flashcards.
@@ -133,6 +154,4 @@ Este arquivo acompanha as etapas finais de revisão do **C++ de Bolso**. Atualiz
 
 ## Etapas restantes após esta rodada
 
-1. Polimento visual.
-2. Documentação para manutenção.
-3. Futuro maior: login, sincronização e exportação/importação de progresso.
+1. Futuro maior: login, sincronização e exportação/importação de progresso.

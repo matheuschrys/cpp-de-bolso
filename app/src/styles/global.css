@@ -34,3 +34,22 @@ button:focus-visible,input:focus-visible,select:focus-visible,[role="button"]:fo
 @media(max-width:800px){.simulation-controls--topics{grid-template-columns:1fr 1fr}.simulation-controls--topics .button,.simulation-controls--topics>span{grid-column:1/-1}.simulation-history__grid,.simulation-breakdown{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.simulation-controls--topics,.simulation-history__grid,.simulation-breakdown{grid-template-columns:1fr}.simulation-topic-list label{width:100%;justify-content:flex-start}}
 .study-progress h2{letter-spacing:0;word-spacing:.08em}
+
+/* Etapa 8: camada de polimento visual sem alterar a arquitetura dos componentes. */
+:root{--bg:#f3f7ef;--surface:#fffef9;--surface-2:#e8f0e4;--muted:#53655c;--border:#bdcfc4;--shadow:0 18px 42px rgba(20,33,29,.07)}
+:root[data-theme="dark"]{--shadow:0 18px 42px rgba(0,0,0,.22)}
+.study-shell{background:linear-gradient(180deg,color-mix(in srgb,var(--accent-soft) 22%,var(--bg)) 0%,var(--bg) 230px)}
+.study-hero h1,.page-intro h1,.flashcards-hero h1,.action-strip h2,.flashcard h2,.flashcard-aside h2,.content-block h3,.chapter-card strong,.quick-review-card h3{letter-spacing:0}
+.study-page>section,.study-page>.page-intro,.study-page>.back-link{animation:page-rise .28s ease both}
+.study-page>section:nth-of-type(2){animation-delay:.04s}.study-page>section:nth-of-type(3){animation-delay:.08s}
+.button,.icon-button,.chapter-card,.chapter-index-card,.more-card,.question-option,.complexity-tabs button,.sorting-controls button,.mistake-theme-list button{transition:border-color .18s ease,background-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease}
+.button:not(:disabled):hover,.icon-button:hover{transform:translateY(-1px);box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 12%,transparent)}
+.empty-state,.flashcard-empty{position:relative;overflow:hidden;min-height:210px;align-content:center;border-style:solid;background:linear-gradient(135deg,color-mix(in srgb,var(--surface) 88%,var(--accent-soft)),var(--surface));box-shadow:var(--shadow)}
+.empty-state::before,.flashcard-empty::before{content:"";position:absolute;inset:14px;border:1px dashed color-mix(in srgb,var(--accent) 34%,var(--border));border-radius:8px;pointer-events:none}
+.empty-state>* ,.flashcard-empty>*{position:relative}
+.empty-state h2,.flashcard-empty h2{color:var(--accent-strong)}
+.bottom-nav{box-shadow:0 -10px 30px rgba(0,0,0,.08)}
+@keyframes page-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+@media(max-width:800px){.button:not(:disabled):hover,.icon-button:hover,.chapter-card:hover,.more-card:hover,.flashcard__surface:hover{transform:none}.study-page>section,.study-page>.page-intro,.study-page>.back-link{animation:none}.study-hero h1,.page-intro h1{font-size:clamp(2.35rem,11vw,3.75rem);line-height:1.04}.study-hero{padding-top:8px}.content-block,.challenge-layout,.deck-layout{gap:14px}.bottom-nav{padding-bottom:env(safe-area-inset-bottom)}}
+@media(max-width:480px){.study-shell{padding-inline:10px}.study-page{padding-top:26px}.study-header{height:62px}.brand b{font-size:1.28rem}.study-hero h1,.page-intro h1,.flashcards-hero h1{font-size:2.35rem;line-height:1.06}.study-hero p,.page-intro p,.flashcards-hero p{font-size:.95rem;margin-top:14px}.flow-dashboard article,.chapter-list-panel,.practice-preview,.study-progress,.study-question,.content-block,.flashcard-aside,.simulation-result{border-radius:8px}.deck-controls{display:grid;grid-template-columns:1fr;justify-items:stretch}.deck-controls>span{text-align:center;order:-1}.empty-state,.flashcard-empty{min-height:180px;padding:34px 18px}.complexity-growth article,.sorting-list article{gap:9px}.code-block{padding:12px}}
