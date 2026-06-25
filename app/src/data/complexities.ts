@@ -1,0 +1,6 @@
+export const complexityRows = [
+  ["vector / array", "acesso por índice", "O(1)", "Acesso direto por posição"], ["vector", "busca linear", "O(n)", "Percorre até encontrar"], ["vector", "inserção no fim", "O(1) amortizado", "Pode realocar ocasionalmente"], ["vector", "inserção ou remoção no início/meio", "O(n)", "Desloca elementos"],
+  ["lista encadeada", "acesso por posição", "O(n)", "Segue nós"], ["lista encadeada", "inserção/remoção no início", "O(1)", "Ajusta a cabeça"], ["lista encadeada", "inserir após nó conhecido", "O(1)", "Religa ponteiros"],
+  ["pilha", "push / pop / top", "O(1)", "Opera no topo"], ["fila", "enqueue / dequeue / front", "O(1)", "Extremidades da fila"], ["deque", "push/pop nas extremidades", "O(1)", "Duas pontas"], ["priority_queue", "push / pop", "O(log n)", "Mantém heap"],
+  ["busca linear", "localizar", "O(n)", "Não exige ordenação"], ["busca binária", "localizar", "O(log n)", "Exige coleção ordenada"], ["bubble / selection / insertion", "ordenar", "O(n²)", "Insertion ajuda em quase ordenados"], ["merge / heap", "ordenar", "O(n log n)", "Merge usa memória auxiliar"], ["quick", "ordenar", "médio O(n log n)", "Pior O(n²) com pivô ruim"], ["counting", "ordenar", "O(n + k)", "Bom para intervalo pequeno"], ["radix", "ordenar", "depende de dígitos/base", "Usa ordenação estável por dígito"],
+] as const;

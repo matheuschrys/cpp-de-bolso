@@ -64,3 +64,40 @@ src/utils/          Funções auxiliares.
 ```
 
 As dependências já foram instaladas com `npm install`.
+
+## Validação automatizada da interface
+
+Validações de conteúdo e código:
+
+```bash
+npm run lint
+npm test
+```
+
+O `npm test` verifica banco de questões, cobertura de flashcards, qualidade textual/alternativas e compilação dos exemplos C++.
+
+Depois de gerar o build, rode o preview em um terminal:
+
+```bash
+npm run build
+npm run preview -- --host 127.0.0.1
+```
+
+Em outro terminal, execute o smoke test visual:
+
+```bash
+npm run test:ui
+```
+
+O teste abre Chromium via Playwright, passa por rotas principais, valida o filtro de flashcards, vira um card e salva screenshots temporários em `/tmp/cpp-de-bolso-ui-smoke`.
+
+## Próxima fase: conta e sincronização
+
+Ideia registrada para depois da versão local:
+
+- login opcional;
+- sincronização de progresso, revisões e simulados entre dispositivos;
+- backup/exportação dos dados locais;
+- ranking pessoal por conteúdo.
+
+Antes de implementar, será necessário escolher autenticação, banco de dados e política de privacidade; os dados atuais do localStorage devem migrar sem perda.

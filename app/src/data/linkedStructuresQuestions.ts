@@ -1,0 +1,26 @@
+import type { QuestionSeed } from "./questionBank";
+
+const difficulties = ["Média", "Difícil", "Muito difícil"] as const;
+const seeds: QuestionSeed[] = [];
+const add = (chapter: QuestionSeed["chapter"], theme: string, kind: NonNullable<QuestionSeed["kind"]>, prompt: string, answer: string, distractors: string[], explanation: string, code: string, tags: string[]) => seeds.push({ chapter, theme, kind, difficulty: difficulties[seeds.length % difficulties.length], prompt, answer, distractors, explanation, code, tags: [theme, ...tags] });
+
+for (let i = 0; i < 10; i += 1) {
+  const value = 10 + i;
+  if (i % 4 === 0) add("listas", "Inserção no início", "interpretação de código", "Na lista de teste " + (i + 1) + ", qual é a nova cabeça após a inserção?", String(value), ["nullptr", String(value + 1), "A cabeça antiga", "O último nó"], "O novo nó recebe a cabeça antiga como próximo e passa a ser inicio.", "No* inicio = new No{5, nullptr};\ninicio = new No{" + value + ", inicio};", ["No*&", "início"]);
+  else if (i % 4 === 1) add("listas", "Inserção no fim", "complexidade", "Sem ponteiro para fim, qual é o custo de inserir o valor " + value + " no fim?", "O(n), pois é preciso localizar o último nó.", ["O(1) sempre.", "O(log n).", "O(n²).", "O(2ⁿ)."], "A ligação final é O(1), mas encontrar o último nó percorre a lista.", "No* atual = inicio;\nwhile (atual->prox) atual = atual->prox;\natual->prox = new No{" + value + ", nullptr};", ["fim", "O(n)"]);
+  else if (i % 4 === 2) add("listas", "Inserção após nó", "erro de compilação", "Qual ordem preserva o restante da lista ao inserir " + value + " após anterior?", "Criar novo com prox igual a anterior->prox e depois atualizar anterior->prox.", ["Atualizar anterior->prox e depois tentar descobrir o próximo.", "Apagar anterior antes de inserir.", "Definir inicio como nullptr.", "Usar delete no novo nó."], "O construtor do novo nó precisa receber a ligação antiga antes de ela ser substituída.", "anterior->prox = new No{" + value + ", anterior->prox};", ["ponteiros", "após"]);
+  else add("listas", "Inserção por posição", "estado final", "Com posição zero no caso " + (i + 1) + ", qual ponteiro pode mudar?", "inicio, pois inserir na primeira posição cria uma nova cabeça.", ["Somente o último nó.", "Nenhum ponteiro.", "Apenas o valor do primeiro nó.", "Somente anterior->prox."], "Posição zero é inserção no início; por isso a função recebe No*& inicio.", "if (posicao == 0) {\n  inicio = new No{" + value + ", inicio};\n}", ["posição", "No*&"]);
+}
+
+for (let i = 0; i < 10; i += 1) {
+  const a = i + 1; const b = i + 4;
+  if (i % 3 === 0) add("filas", "Fila encadeada", "saída do programa", "Qual valor front devolve no cenário de fila " + (i + 1) + "?", String(b), [String(a), "nullptr", "0", "Erro de compilação"], "enqueue entra na traseira; dequeue remove a frente. Depois da remoção, o próximo valor é b.", "FilaEncadeada f;\nf.enqueue(" + a + "); f.enqueue(" + b + ");\nf.dequeue();\nstd::cout << f.front();", ["front", "FIFO"]);
+  else if (i % 3 === 1) add("filas", "enqueue", "complexidade", "Com ponteiro tras atualizado, qual é o custo de enqueue no cenário " + (i + 1) + "?", "O(1), pois tras aponta diretamente para o último nó.", ["O(n), pois percorre a fila.", "O(log n).", "O(n²).", "Depende do valor."], "A fila guarda a traseira, então a ligação do novo nó é direta.", "No* novo = new No{" + a + ", nullptr};\ntras->prox = novo;\ntras = novo;", ["enqueue", "O(1)"]);
+  else add("filas", "dequeue", "estado final", "Ao remover o único nó da fila " + (i + 1) + ", qual estado é correto?", "frente e tras devem ser nullptr.", ["Somente frente vira nullptr.", "Somente tras vira nullptr.", "Os dois continuam no nó removido.", "frente aponta para tras."], "Sem nós, nenhum dos extremos pode guardar endereço do nó destruído.", "No* removido = frente;\nfrente = frente->prox;\nif (!frente) tras = nullptr;\ndelete removido;", ["dequeue", "nullptr"]);
+}
+
+for (let i = 0; i < 5; i += 1) add("listas", "Ponteiros e complexidade", "complexidade", "Na operação integrada " + (i + 1) + ", por que localizar o nó anterior domina o custo?", "Porque a religação é O(1), mas encontrar anterior pode exigir percorrer n nós.", ["Porque delete é O(n²).", "Porque new ordena a lista.", "Porque ponteiros só funcionam em O(log n).", "Porque inserir sempre copia todos os nós."], "Em estruturas encadeadas, conhecer o ponto de inserção muda o custo da operação.", "No* anterior = inicio;\nwhile (anterior && anterior->valor != alvo) anterior = anterior->prox;\nif (anterior) inserirApos(anterior, " + (30 + i) + ");", ["lista", "complexidade"]);
+
+for (let i = 0; i < 5; i += 1) add("filas", "Estado final da fila", "estado final", "Após enqueue(" + (i + 2) + "), enqueue(" + (i + 5) + "), dequeue(), enqueue(" + (i + 8) + "), qual é a ordem da frente para trás?", (i + 5) + ", " + (i + 8), [(i + 8) + ", " + (i + 5), (i + 2) + ", " + (i + 8), "vazia", (i + 2) + ", " + (i + 5)], "A primeira entrada sai; as demais preservam a ordem FIFO.", "FilaEncadeada f;\nf.enqueue(" + (i + 2) + "); f.enqueue(" + (i + 5) + ");\nf.dequeue(); f.enqueue(" + (i + 8) + ");", ["fila encadeada", "estado final"]);
+
+export const linkedStructuresQuestionSeeds = seeds;
