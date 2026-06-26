@@ -1,6 +1,7 @@
 import type { ChapterId, StudyQuestion } from "../types/study";
 import { edbQuestionSeeds } from "./edbQuestionBank";
 import { linkedStructuresQuestionSeeds } from "./linkedStructuresQuestions";
+import { sortingQuestionSeeds } from "./sortingQuestions";
 
 export type QuestionSeed = Omit<StudyQuestion, "id" | "options" | "correctAnswer"> & {
   answer: string;
@@ -165,7 +166,7 @@ const reinforcementSeeds: QuestionSeed[] = [
   { chapter: "18", theme: "Validação de entrada", difficulty: "Muito difícil", prompt: "Após falhar ao ler um inteiro com `std::cin`, qual sequência permite tentar uma nova leitura de forma consciente?", answer: "Limpar o estado com `std::cin.clear()` e descartar o trecho inválido antes de pedir novamente.", distractors: ["Chamar apenas `std::cin.eof()`.", "Usar `std::cout.clear()`.", "Criar outra variável int e ler nela sem alterar o stream.", "Chamar `getline` no objeto string anterior."], explanation: "Enquanto `failbit` estiver ativo, novas extrações falham imediatamente. Limpar o estado e consumir a entrada ruim evita um laço infinito.", tags: ["cin", "clear", "failbit", "validação"] },
 ];
 
-const allSeeds = [...fileSeeds, ...stringSeeds, ...classSeeds, ...operatorSeeds, ...reinforcementSeeds, ...edbQuestionSeeds, ...linkedStructuresQuestionSeeds];
+const allSeeds = [...fileSeeds, ...stringSeeds, ...classSeeds, ...operatorSeeds, ...reinforcementSeeds, ...edbQuestionSeeds, ...linkedStructuresQuestionSeeds, ...sortingQuestionSeeds];
 const balancedLabels = seededShuffle(allSeeds.map((_, index) => index % labels.length), 20260624);
 
 export const questionBank = allSeeds.map((seed, index) => makeQuestion(seed, index, balancedLabels[index]));
